@@ -11,6 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- tailwind & daisyUI cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
@@ -29,20 +37,24 @@
     <header>
       <!-- Navbar -->
       <nav>
-        <div class="navbar bg-base-100 shadow">
-          <div class="flex-1">
-            <a class="text-xl font-bold">Issues Tracker</a>
+        <div class="navbar bg-base-100 shadow flex justify-between">
+          <div class="flex gap-3 items-center">
+            <img class="w-[30px]" src="./assets/github-logo.png" alt="" />
+            <a class="text-xl font-bold">GitHub Issues Tracker</a>
           </div>
           <div class="flex gap-2">
-            <input
-              id="searchInput"
-              type="text"
-              placeholder="Search issue"
-              class="input input-bordered"
-            />
-            <button onclick="searchIssue()" class="btn btn-primary">
-              Search
-            </button>
+            <div class="w-72">
+              <label class="input flex items-center gap-2 rounded-xl">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                  id="searchInput"
+                  type="text"
+                  class="grow"
+                  placeholder="Search issue"
+                />
+              </label>
+            </div>
+            <button class="btn btn-primary">+ New Issue</button>
           </div>
         </div>
       </nav>
