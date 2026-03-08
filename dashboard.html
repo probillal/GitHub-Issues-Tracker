@@ -59,6 +59,35 @@
         </div>
       </nav>
     </header>
+    <!-- main -->
+    <main>
+      <!-- Tabs -->
+      <div class="p-4 rounded-xl mx-40 mt-6">
+        <div class="tabs tabs-boxed bg-white shadow shadow-lg p-4 w-full">
+          <button
+            id="tab-all"
+            class="tab tab-active bg-[#4A00FF] px-8 rounded-md py-2 text-white ml-4"
+            onclick="filterIssues('all')"
+          >
+            All
+          </button>
+          <button
+            id="tab-open"
+            class="tab px-8 rounded-md py-2 border border-gray-300 text-gray-500 font-semibold bg-white ml-4"
+            onclick="filterIssues('open')"
+          >
+            Open
+          </button>
+          <button
+            id="tab-closed"
+            class="tab px-8 rounded-md py-2 border border-gray-300 text-gray-500 font-semibold bg-white ml-4"
+            onclick="filterIssues('closed')"
+          >
+            Closed
+          </button>
+        </div>
+      </div>
+    </main>
     <script src="./js/script.js"></script>
   </body>
 </html>
