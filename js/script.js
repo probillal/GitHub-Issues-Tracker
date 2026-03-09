@@ -134,3 +134,14 @@ function filterIssues(type) {
     type === "all" ? issues : issues.filter((issue) => issue.status === type);
   displayIssues(filtered);
 }
+// Search input
+const searchInput = document.getElementById("search-input");
+if (searchInput) {
+  searchInput.addEventListener("keyup", function () {
+    const text = this.value.toLowerCase();
+    const filtered = issues.filter((issue) =>
+      issue.title.toLowerCase().includes(text),
+    );
+    displayIssues(filtered);
+  });
+}
