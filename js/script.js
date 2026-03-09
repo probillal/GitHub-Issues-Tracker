@@ -145,3 +145,26 @@ if (searchInput) {
     displayIssues(filtered);
   });
 }
+
+// MOdal section
+function openModal(issue) {
+  const modalBox = document.getElementById("modal-content");
+
+  modalBox.innerHTML = `
+    <h2 class="text-2xl font-bold mb-4">${issue.title}</h2>
+    <span class="badge badge-success mb-4">${issue.status}</span>
+    <p class="text-slate-500 mb-6">${issue.description}</p>
+    <div class="p-4 bg-slate-50 rounded-lg flex justify-between">
+      <div>
+        <p><strong>Assignee:</strong> ${issue.assignee || "None"}</p>
+        <p><strong>Created:</strong> ${new Date(issue.createdAt).toLocaleDateString()}</p>
+      </div>
+      <div>
+        <p>Priority</p>
+        <span class="badge badge-error">${issue.priority}</span>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("issue_modal").showModal();
+}
