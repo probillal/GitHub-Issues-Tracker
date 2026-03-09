@@ -111,3 +111,26 @@ function displayIssues(data) {
   const issueCount = document.getElementById("issue-count");
   if (issueCount) issueCount.innerText = data.length + " Issues";
 }
+
+// Tab filter
+function filterIssues(type) {
+  const allTab = document.getElementById("tab-all");
+  const openTab = document.getElementById("tab-open");
+  const closeTab = document.getElementById("tab-closed");
+
+  // Reset active
+  [allTab, openTab, closeTab].forEach((tab) =>
+    tab.classList.remove("tab-active", "bg-primary", "text-white"),
+  );
+
+  if (type === "all")
+    allTab.classList.add("tab-active", "bg-primary", "text-white");
+  if (type === "open")
+    openTab.classList.add("tab-active", "bg-primary", "text-white");
+  if (type === "closed")
+    closeTab.classList.add("tab-active", "bg-primary", "text-white");
+
+  const filtered =
+    type === "all" ? issues : issues.filter((issue) => issue.status === type);
+  displayIssues(filtered);
+}
